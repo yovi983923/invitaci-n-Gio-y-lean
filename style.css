@@ -45,7 +45,7 @@ body {
     /* Fondo con tu imagen */
     background-image: url('fondoheader.png');
     background-size: cover;
-    background-position: -20px top;
+    background-position: top;
 }
 
 /* Overlay oscuro / degradado */
