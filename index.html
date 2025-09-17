@@ -1,0 +1,146 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nos Casamos - Giovanna y Leandro</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div id="player"></div>
+
+    <header class="hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1 class="fade-in">Giovanna & Leandro</h1>
+            <p class="fade-in">¡Nos casamos!</p>
+            <p class="fade-in subtitle">Tenemos el placer de invitarte a celebrar nuestro amor en un día que será inolvidable.</p>
+        </div>
+    </header>
+
+    <!-- ===== Música integrada: sección visible justo después de la portada ===== -->
+    <section id="music-section" class="section card-section">
+        <h2 style="display:none;">Música</h2>
+        <div class="music-container">
+            <div id="music-toggle" role="button" tabindex="0" aria-pressed="false" aria-label="Reproducir música">
+                <svg id="music-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="28" height="28">
+                    <path d="M8 5v14l11-7z"/>
+                </svg>
+            </div>
+
+            <div class="music-message">
+                <p>Poné play a la música <span class="heart">❤️</span></p>
+            </div>
+
+            <!-- audio en la sección (loop) -->
+            <audio id="bg-music" src="soclose.mp3" loop></audio>
+        </div>
+    </section>
+
+    <main>
+        <section id="countdown" class="section">
+            <h2 class="hidden">La Gran Espera</h2>
+            <div id="timer" class="hidden">
+                <div class="time-box">
+                    <span id="days">00</span><p>Días</p>
+                </div>
+                <div class="time-box">
+                    <span id="hours">00</span><p>Horas</p>
+                </div>
+                <div class="time-box">
+                    <span id="minutes">00</span><p>Minutos</p>
+                </div>
+                <div class="time-box">
+                    <span id="seconds">00</span><p>Segundos</p>
+                </div>
+            </div>
+            <p class="date hidden">07 de Noviembre, 2025</p>
+        </section>
+        
+        <section id="event-details" class="section card-section hidden">
+            <h2>¡Así será Nuestro Día!</h2>
+            <p class="event-intro">La ceremonia está diseñada para ser íntima y significativa, y tendrá una duración aproximada de 3 horas. Será un tiempo dedicado a celebrar el amor y compartirlo junto a quienes más queremos.</p>
+        </section>
+        
+        <section id="location" class="section card-section hidden">
+            <h2>Ceremonia y Festejo</h2>
+            <p>Te esperamos para celebrar juntos en:</p>
+            <p class="address">Hipólito Yrigoyen 1283, Moreno </p>
+            <a href="https://www.google.com/maps/place/Hip%C3%B3lito+Yrigoyen+1283,+B1744COA+Moreno,+Provincia+de+Buenos+Aires/@-34.6529473,-58.8003746,17z/data=!3m1!4b1!4m5!3m4!1s0x95bc9459a70f65dd:0xe7729e2f4653b7ed!8m2!3d-34.6529473!4d-58.7977997?entry=ttu&g_ep=EgoyMDI1MDkxNC4wIKXMDSoASAFQAw%3D%3D" target="_blank" class="styled-button">Ver en Google Maps</a>
+        </section>
+
+        <section id="dress-code" class="section card-section hidden">
+            <h2>Código de Vestimenta</h2>
+            <p>Tu estilo es parte de la celebración. El código es <strong>Formal</strong>.</p>
+            <p class="dress-code-details">Un look arreglado pero relajado. ¡Queremos que te sientas increíble!</p>
+        </section>
+
+ <section id="gallery" class="section card-section hidden">
+    <h2>Nosotros</h2>
+    <div class="photo-slider">
+        <div class="slide-track">
+            <div class="slide"><img src="gioylean.png" alt="Foto 1"></div>
+            <div class="slide"><img src="gioylean1.png" alt="Foto 2"></div>
+            <div class="slide"><img src="gioylean2.png" alt="Foto 3"></div>
+            <div class="slide"><img src="gioylean3.png" alt="Foto 4"></div>
+
+            <!-- Repetimos para que el scroll sea infinito -->
+            <div class="slide"><img src="gioylean.png" alt="Foto 1"></div>
+            <div class="slide"><img src="gioylean1.png" alt="Foto 2"></div>
+            <div class="slide"><img src="gioylean2.png" alt="Foto 3"></div>
+            <div class="slide"><img src="gioylean3.png" alt="Foto 4"></div>
+        </div>
+    </div>
+</section>
+
+
+
+
+   <section id="gifts" class="section card-section hidden">
+    <h2>Un Detalle Especial</h2>
+    <p>Que estén con nosotros ya es un regalo. Pero si desean acompañarlo con un detalle, un aporte a nuestra luna de miel nos hará muy felices</p>
+
+    <div class="alias-container">
+        <button class="styled-button" id="toggle-bank-info">
+            Ver datos bancarios
+        </button>
+
+        <div id="bank-info" class="bank-info">
+            <p>¡Hola! 😀<br>
+            Te comparto mis datos para que puedas <em>enviarme pesos a través de Mercado Pago</em> 👇</p>
+            <p><strong>Alias:</strong> gioylean</p>
+            <p><strong>CVU:</strong> 0000003100076008065091</p>
+            <p><strong>Nombre:</strong> Giovanna Belen Nuñez Gonzalez</p>
+        </div>
+    </div>
+</section>
+
+
+
+
+        </section>
+
+      <section id="rsvp" class="section card-section hidden">
+    <h2>Confirma tu Asistencia</h2>
+    <p>Tu compañía es fundamental. Por favor, confírmanos tu presencia antes del 20 de Octubre.</p>
+    <a href="https://api.whatsapp.com/send?phone=5491164747746&text=¡Hola!%20Con%20mucha%20alegría%20confirmo%20mi%20asistencia%20al%20casamiento%20de%20Giovanna%20y%20Leandro.%20Mi%20nombre%20es%20" 
+       target="_blank" 
+       class="styled-button">
+       Confirmar por WhatsApp
+    </a>
+</section>
+
+
+    <footer>
+        <p>¡Gracias por ser parte de nuestra historia!</p>
+        <p class="signature">G&L</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,361 @@
+/* style.css (actualizado) */
+:root {
+    --primary-color: #0d1b2a; /* Azul noche */
+    --secondary-color: #e0e1dd; /* Gris claro cálido */
+    --accent-color: #d4af37; /* Dorado */
+    --text-color-light: #fdfdfd;
+    --text-color-dark: #333333;
+    --font-headings: 'Playfair Display', serif;
+    --font-body: 'Montserrat', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-body);
+    color: var(--text-color-dark);
+    text-align: center;
+    line-height: 1.8;
+    background-color: #f4f4f4;
+    /* Fondo floral sutil y fijo */
+    background-image: url('assets/floral-bg.png');
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+}
+
+/* ======== Portada con Degradado ======== */
+.hero {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--text-color-light);
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6);
+    overflow: hidden;
+    /* Fondo con tu imagen */
+    background-image: url('fondoheader.png');
+    background-size: cover;
+    background-position: top;
+}
+
+/* Overlay oscuro / degradado */
+.hero-overlay {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: linear-gradient(
+        to top, 
+        rgba(13, 27, 42, 0.8) 0%, 
+        rgba(27, 38, 59, 0.6) 50%, 
+        rgba(65, 90, 119, 0.4) 100%
+    );
+    z-index: 1;
+}
+
+/* Contenido encima del overlay */
+.hero-content {
+    position: relative;
+    z-index: 2;
+    padding: 20px;
+}
+
+.hero h1 { font-size: clamp(2.5rem, 10vw, 4.5rem); font-weight: 700; }
+.hero p { font-size: clamp(1rem, 4vw, 1.4rem); }
+
+.hero .subtitle { 
+    font-size: clamp(0.9rem, 3vw, 1.1rem); 
+    max-width: 600px; 
+    margin-top: 1.5rem;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+/* ======== Estructura de Secciones ======== */
+main {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.section {
+    margin-bottom: 2rem;
+    padding: clamp(3rem, 8vw, 5rem) clamp(1.5rem, 6vw, 4rem);
+}
+
+/* ======== Contador ======== */
+#countdown {
+    color: var(--text-color-light);
+    background: linear-gradient(135deg, #0d1b2a 0%, #1b263b 50%, #4a5568 100%);
+}
+
+/* Secciones tipo "tarjeta" sobre el fondo floral */
+.card-section {
+    background-color: rgba(255, 255, 255, 0.95);
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+}
+
+h2 {
+    font-size: clamp(2rem, 7vw, 2.8rem);
+    margin-bottom: 2rem;
+}
+
+/* ======== Componentes Específicos ======== */
+#timer { display: flex; justify-content: center; gap: clamp(1rem, 4vw, 2rem); }
+.time-box { background: rgba(255, 255, 255, 0.1); padding: 1rem; border-radius: 10px; min-width: 90px; }
+.time-box span { display: block; font-size: clamp(2rem, 8vw, 2.8rem); font-weight: 600; }
+.time-box p { font-size: 0.8rem; text-transform: uppercase; margin-top: 0.5rem; letter-spacing: 1px; }
+.date { font-family: var(--font-headings); font-size: 1.3rem; margin-top: 2rem; }
+
+.event-intro, #dress-code p, #gifts p, #rsvp p {
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 1.5rem;
+}
+
+.address { font-size: 1.2rem; font-weight: 600; margin: 1rem 0 1.5rem 0; }
+.dress-code-details { font-style: italic; opacity: 0.8; }
+
+.styled-button {
+    display: inline-block;
+    background: linear-gradient(135deg, var(--primary-color), #1b263b);
+    color: var(--text-color-light);
+    padding: 15px 35px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.styled-button:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(29, 53, 87, 0.3);
+}
+
+.photo-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1rem;
+}
+.photo-grid img { width: 100%; height: 280px; object-fit: cover; border-radius: 10px; transition: transform 0.4s ease, filter 0.4s ease; }
+.photo-grid img:hover { transform: scale(1.05); filter: brightness(1.1); }
+
+.alias-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    max-width: 500px;
+    margin: 1.5rem auto 0 auto;
+}
+
+#toggle-bank-info {
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+#toggle-bank-info:hover {
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 8px 18px rgba(29, 53, 87, 0.3);
+}
+
+/* Información bancaria: inicialmente oculta */
+.bank-info {
+    max-width: 100%;
+    background-color: rgba(224, 225, 221, 0.95);
+    border-left: 5px solid var(--accent-color);
+    padding: 1rem 1.5rem;
+    border-radius: 5px;
+    font-family: var(--font-body);
+    font-size: 1rem;
+    color: var(--text-color-dark);
+    line-height: 1.5;
+    text-align: left;
+    display: none;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+/* Resaltar datos importantes */
+.bank-info strong {
+    color: var(--primary-color);
+    font-family: var(--font-headings);
+}
+
+/* Animación suave al desplegar */
+.bank-info.show {
+    display: block;
+    animation: fadeInBank 0.5s ease forwards;
+}
+@keyframes fadeInBank {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+
+/* Feedback de copia */
+.copy-feedback {
+    opacity: 0;
+    font-size: 0.9rem;
+    color: var(--accent-color);
+    font-family: var(--font-body);
+    transition: opacity 0.3s ease;
+}
+.copy-feedback.show {
+    opacity: 1;
+}
+
+/* ======== Footer ======== */
+footer {
+    color: var(--text-color-light);
+    padding: 4rem 2rem;
+    background: linear-gradient(135deg, #1b263b, var(--primary-color));
+}
+footer p { font-family: var(--font-headings); font-size: 1.4rem; }
+.signature { font-size: 1.8rem; font-weight: 700; margin-top: 0.5rem; }
+
+/* ======== Música integrada dentro de sección ======== */
+.music-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.25rem;
+    flex-wrap: wrap;
+}
+
+/* botón circular integrado (no flotante) */
+#music-toggle {
+    position: relative;
+    width: 64px;
+    height: 64px;
+    background-color: var(--primary-color);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    box-shadow: 0 6px 18px rgba(13, 27, 42, 0.25);
+    transition: transform 0.2s ease, background-color 0.2s ease;
+    flex-shrink: 0;
+}
+#music-toggle:hover { transform: scale(1.05); background-color: #162233; }
+#music-toggle svg { width: 28px; height: 28px; fill: currentColor; }
+
+/* mensaje con la misma tipografía de títulos para armonía */
+.music-message p {
+    font-family: var(--font-headings);
+    color: var(--primary-color);
+    font-size: clamp(1rem, 2.5vw, 1.25rem);
+    margin: 0;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+/* corazón con color de acento */
+.music-message .heart {
+    color: var(--accent-color);
+    font-size: 1.2em;
+}
+
+/* ======== Animaciones y Transiciones Suaves ======== */
+.fade-in { animation: fadeInAnimation 1.5s 0.2s ease-in forwards; opacity: 0; }
+@keyframes fadeInAnimation { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+
+.hidden {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 1s cubic-bezier(0.645, 0.045, 0.355, 1), transform 1s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+.show { opacity: 1; transform: translateY(0); }
+
+/* ===== Responsive Música y Galería ===== */
+@media (max-width: 520px) {
+    /* Música */
+    .music-container { gap: 0.75rem; }
+    #music-toggle { width: 56px; height: 56px; }
+    .music-message p { font-size: 1rem; text-align: center; }
+
+    /* Galería slider */
+    .slide { flex: 0 0 180px; }
+    .slide img { height: 200px; }
+}
+
+/* ===== Reloj / Countdown responsive ===== */
+@media (max-width: 520px) {
+    #timer {
+        flex-direction: column;  /* Apilar verticalmente */
+        gap: 1rem;               /* Separación entre bloques */
+        align-items: center;
+    }
+
+    .time-box {
+        min-width: auto;          /* Ajusta al contenedor */
+        padding: 0.75rem 1rem;
+    }
+
+    .time-box span {
+        font-size: 1.5rem;       /* Número más pequeño */
+    }
+
+    .time-box p {
+        font-size: 0.75rem;      /* Texto más pequeño */
+    }
+
+    .date {
+        font-size: 1rem;
+        margin-top: 0.75rem;
+    }
+}
+
+/* ===== Slider Galería (ya existente) ===== */
+.photo-slider {
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.slide-track {
+    display: flex;
+    width: calc(250px * 8); /* 4 fotos originales + 4 repetidas */
+    animation: scrollSlides 20s linear infinite;
+}
+
+.slide {
+    flex: 0 0 250px;
+    margin-right: 1rem;
+}
+
+.slide img {
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+    border-radius: 12px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+    transition: transform 0.3s ease;
+}
+
+.slide img:hover {
+    transform: scale(1.05);
+}
+
+@keyframes scrollSlides {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
+
+
+
