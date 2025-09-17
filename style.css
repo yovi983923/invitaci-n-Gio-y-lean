@@ -45,7 +45,7 @@ body {
     /* Fondo con tu imagen */
     background-image: url('fondoheader.png');
     background-size: cover;
-    background-position: top;
+    background-position: 70% top;
 }
 
 /* Overlay oscuro / degradado */
@@ -403,6 +403,6 @@ footer p { font-family: var(--font-headings); font-size: 1.4rem; }
 /* ===== Ajuste header en móvil ===== */
 @media (max-width: 520px) {
     .hero-alt {
-        background-position: left center; /* mueve la imagen hacia la izquierda */
+        background-position: -40 top; /* mueve la imagen hacia la izquierda */
     }
 }
