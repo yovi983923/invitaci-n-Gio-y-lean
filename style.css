@@ -319,6 +319,50 @@ footer p { font-family: var(--font-headings); font-size: 1.4rem; }
     }
 }
 
+/* ===== Responsive Música y Galería ===== */
+@media (max-width: 520px) {
+    /* Música */
+    .music-container { gap: 0.75rem; }
+    #music-toggle { width: 56px; height: 56px; }
+    .music-message p { font-size: 1rem; text-align: center; }
+
+    /* Galería slider */
+    .slide { flex: 0 0 180px; }
+    .slide img { height: 200px; }
+}
+
+/* ===== Reloj / Countdown responsive ===== */
+@media (max-width: 520px) {
+    #timer {
+        flex-direction: column;   /* Apilar verticalmente */
+        gap: 1rem;                /* Separación entre bloques */
+        align-items: center;
+    }
+
+    .time-box {
+        width: 120px;             /* 🔹 Mismo ancho en todas */
+        height: 100px;            /* 🔹 Misma altura en todas */
+        padding: 0.75rem 1rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;  /* Centra el contenido */
+        align-items: center;
+    }
+
+    .time-box span {
+        font-size: 1.5rem;        /* Número más pequeño */
+    }
+
+    .time-box p {
+        font-size: 0.75rem;       /* Texto más pequeño */
+    }
+
+    .date {
+        font-size: 1rem;
+        margin-top: 0.75rem;
+    }
+}
+
 /* ===== Slider Galería (ya existente) ===== */
 .photo-slider {
     overflow: hidden;
@@ -356,6 +400,9 @@ footer p { font-family: var(--font-headings); font-size: 1.4rem; }
     0% { transform: translateX(0); }
     100% { transform: translateX(-50%); }
 }
-
-
-
+/* ===== Ajuste header en móvil ===== */
+@media (max-width: 520px) {
+    .hero-alt {
+        background-position: left center; /* mueve la imagen hacia la izquierda */
+    }
+}
